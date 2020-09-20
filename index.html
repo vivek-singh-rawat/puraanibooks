@@ -6,6 +6,11 @@
 	<link rel="stylesheet" href="style.css">
 	<link href="https://fonts.googleapis.com/css2?family=Kufam:wght@400;500&family=PT+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet"> 
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 <body>
  <section>
@@ -42,30 +47,51 @@
     </div>
    <!--img slider-->
  </section> 
-  <div  class="img-container">
-  	   <div class="img-slide">
-  	  
-  	    <img src="https://raw.githubusercontent.com/vivek-singh-rawat/puraanibooks/master/book1.jpg">
-  	     <img src="https://raw.githubusercontent.com/vivek-singh-rawat/puraanibooks/master/book2.jpg">
-  	      <img src="https://raw.githubusercontent.com/vivek-singh-rawat/puraanibooks/master/book3.jpg">
-  	       <img src="https://raw.githubusercontent.com/vivek-singh-rawat/puraanibooks/master/book4.jpg">
-  	        <img src="https://raw.githubusercontent.com/vivek-singh-rawat/puraanibooks/master/book5.jpg">
-  	         <img src="https://raw.githubusercontent.com/vivek-singh-rawat/puraanibooks/master/book6.jpg">
-  	          <img src="https://raw.githubusercontent.com/vivek-singh-rawat/puraanibooks/master/book7.jpg">
-  	           <img src="https://raw.githubusercontent.com/vivek-singh-rawat/puraanibooks/master/book8.jpg">
-  	            <img src="https://raw.githubusercontent.com/vivek-singh-rawat/puraanibooks/master/book9.jpg">
-  	             <img src="https://raw.githubusercontent.com/vivek-singh-rawat/puraanibooks/master/book10.jpg">
-  	              <img src="https://raw.githubusercontent.com/vivek-singh-rawat/puraanibooks/master/book11.jpg">
-  	               <img src="https://raw.githubusercontent.com/vivek-singh-rawat/puraanibooks/master/book12.jpg">
-  	                 <img src="https://raw.githubusercontent.com/vivek-singh-rawat/puraanibooks/master/book1.jpg" id="firstclone"> 
-
-
-  	  </div>
-  	
-  </div>  
- <span> 
-  <button id="prevbtn">prev</button>
-  <button id="nextbtn">next</button>
- </span> 
+	<div class="slideshow-container" style="padding-left: 330px" >
+       <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+              <img src=https://raw.githubusercontent.com/vivek-singh-rawat/puraanibooks/master/"book1.jpg" style="width:45%">
+              <div class="text">CHanakya neeti
+              </div>
+       </div>
+       <div class="mySlides fade">
+             <div class="numbertext">2 / 3</div>
+             <img src="https://raw.githubusercontent.com/vivek-singh-rawat/puraanibooks/master/book2.jpg" style="width:45%">
+             <div class="text">Mein Kamph</div>
+       </div>
+       <div class="mySlides fade">
+             <div class="numbertext">3 / 3</div>
+             <img src="https://raw.githubusercontent.com/vivek-singh-rawat/puraanibooks/master/book5.jpg" style="width:45%">
+             <div class="text">Inner Engineering</div>
+      </div>
+     
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+ </section>   
+    <script>
+      var slideIndex = 0;
+      showSlides();
+      function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        for(i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if(slideIndex > slides.length) {
+          slideIndex = 1
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+      }
+    </script> 
+  
 </body>
 </html>
